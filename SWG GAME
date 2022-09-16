@@ -1,0 +1,55 @@
+import random
+
+
+def gameWin(comp, you):
+    if comp == you:
+        return None
+        
+        
+    #computer goes to s    
+    elif comp == 's':
+        if you == 'w':
+            return False
+        elif you == 'g':
+            return True
+    
+    #computer goes to w    
+    elif comp == 'w':
+        if you == 'g':
+            return False
+        elif you == 's':
+            return True
+            
+    #computer goes to g
+    elif comp == 'g':
+        if you == 's':
+            return False
+        elif you == 'w':
+            return True
+            
+print("Comp Turn: Snake(s) Water(w) or Gun(g)?")
+randNo = random.randint(1,3)
+if randNo == 1:
+    comp = 's'
+elif randNo == 2:
+    comp = 'w'
+elif randNo == 3:
+    comp = 'g'
+
+you='s'
+while you == 's' or you == 'w' or you == 'g':    
+    you = input(("Your Turn: Snake(s) Water(w) or Gun(g)?"))
+    a = gameWin(comp, you)
+    
+    print(f"Computer choose {comp}")
+    print(f"You choose {you}")
+    
+    if a == None and you==comp:
+        print("The game is Tie!")
+    #for invalid input
+    elif a==None:
+        print("game input invalid") 
+    elif a:
+        print("you win!")
+    else:
+        print("You lose!")
