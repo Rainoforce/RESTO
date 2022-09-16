@@ -37,8 +37,8 @@ elif randNo == 3:
     comp = 'g'
 
 you='s'
-while you == 's' or you == 'w' or you == 'g':    
-    you = input(("Your Turn: Snake(s) Water(w) or Gun(g)?"))
+while you != 'e':    
+    you = input(("Your Turn: Snake(s) Water(w) or Gun(g) or exit(e)?"))
     a = gameWin(comp, you)
     
     print(f"Computer choose {comp}")
@@ -48,7 +48,7 @@ while you == 's' or you == 'w' or you == 'g':
         print("The game is Tie!")
     #for invalid input
     elif a==None:
-        print("game input invalid") 
+        print("your input invalid") 
     elif a:
         print("you win!")
     else:
